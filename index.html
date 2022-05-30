@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 
     
@@ -16,20 +16,34 @@
         <div class="title">Rock Paper Scissors</div>
 
         <div class="versus">
+            <div class="computer">
+                <img src="https://via.placeholder.com/150x150">
+                <div class="computer-title">Computer</div>
+            </div> 
+
+            <div class="score-container">
+                <div class="cpu-score">0</div>
+                <div class="player-score">0</div>
+                <!--<img src="https://via.placeholder.com/150x150"> -->
+
+            </div>
+
+            <div class="player">
+                <img src="https://via.placeholder.com/150x150">
+                <div class="player-title">Player</div>
+            </div>
 
         </div>
 
-        <div class="result">
-
-
-        </div>
+        <div class="result"> Result:</div>
 
         <div class="choice">
             <div class="choice-title">Pick an Option Below</div>
+
             <div class="buttons">
-                <button id ="choice rock">Rock</button>
-                <button id ="choice paper">Paper</button>
-                <button id ="choice scissors">Scissors</button>
+                <button class ="rock">Rock</button>
+                <button class ="paper">Paper</button>
+                <button class ="scissors">Scissors</button>
             </div>
         </div>
 
