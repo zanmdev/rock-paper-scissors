@@ -47,7 +47,7 @@ function game(){
     let playerScore = 0;
     let computerScore =0;
 
-    for(let i = 0; i<5; i++){
+    
      let playerChoice = prompt("Choose Rock, Paper or Scissors");
      let winner = round(playerChoice,computerPlay());
      
@@ -58,15 +58,14 @@ function game(){
         computerScore++
      }
 
-    }
+    
     console.log("P:" +playerScore + " | C:" + computerScore);
     if(playerScore > computerScore){
         console.log("Player Won the Game");
     }else if(playerScore < computerScore){
         console.log("Sorry, you lost the game");
     }else {
-        console.log("You Tied");
+        console.log("You Tied");    
     }
-    
 }
-game();
+
