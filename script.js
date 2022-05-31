@@ -4,11 +4,34 @@ function computerPlay(){
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
+
+function setImage(playerSelection, computerSelection){
+
+    if (playerSelection =="PAPER" ){
+        pIMG.src = "./paper.png";
+    }else if(playerSelection=="ROCK"){
+        pIMG.src = "./rock.png";
+    }else{
+        pIMG.src = "./scissors.png";
+    }
+
+    if (computerSelection =="PAPER" ){
+        cIMG.src = "./paper.png";
+    }else if(computerSelection=="ROCK"){
+        cIMG.src = "./rock.png";
+    }else{
+        cIMG.src = "./scissors.png";
+    }
+
+
+}
+
 function round(playerSelection){
     computerSelection = computerPlay();
     playerSelection = playerSelection.toUpperCase();
-
     
+    setImage(playerSelection,computerSelection);
+
     if (playerSelection === computerSelection){
         results.textContent ="Tie Game";
         results.style.backgroundColor = "Grey";
@@ -55,7 +78,7 @@ function round(playerSelection){
 }
 
 function game(winner){
-    console.log(winner);
+
      
      if (winner == 1){
          playerScore++
@@ -66,7 +89,18 @@ function game(winner){
      }
 
      if(playerScore == 5 || computerScore == 5){
-        //Stop game and call for winner
+        //Stop Button Inputs
+        const buttons = document.querySelectorAll(".button")
+        buttons.forEach((button) => {
+            button.removeEventListener("click",startRound);
+     });
+
+     if(playerScore == 5){
+        results.textContent = "YOU WIN!";
+     }else{
+        results.textContent = "YOU LOSE";
+     }
+
      }
 
 
@@ -84,14 +118,20 @@ const results = document.querySelector(".result");
 const pScore= document.querySelector(".player-score");
 const cScore = document.querySelector(".cpu-score");
 
-rock.addEventListener("click",function(){
-    game(round("Rock"));
-});
+const cIMG = document.querySelector(".computer-img");
+const pIMG = document.querySelector(".player-img");
 
-paper.addEventListener("click",function(){
-    game(round("Paper"));
-});
 
-scissors.addEventListener("click",function(){
-    game(round("Scissors"));
-});
+
+
+function startRound(){
+    game(round(this.textContent));
+}
+
+
+
+rock.addEventListener("click",startRound);
+
+paper.addEventListener("click",startRound);
+
+scissors.addEventListener("click",startRound);
