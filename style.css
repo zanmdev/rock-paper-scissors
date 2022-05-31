@@ -66,3 +66,32 @@ body{
     align-self: center;
     font-size: 24px;
 }
+
+.choice{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    border-radius: 30px;
+    padding: 30px;
+    
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 24px;
+    justify-content: space-around;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.choice-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
